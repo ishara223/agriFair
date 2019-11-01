@@ -1,0 +1,119 @@
+<div  ng-controller="myFarmerRequestCtrl" style="background-color:#fbfbfb;min-height: 92vh;padding-top:20px">
+    <div class="container">
+        <div class="col-md-4 col-sm-12" style="padding-right: 10px;">
+            <div class="card gradient-card shade" style="background-color: white; border-radius: 10px;height: auto;margin-bottom:10px">
+                <div ng-click="showCreateBuyerRequest()" class="card-image" style="background-color: blue;border-radius: 10px;">
+                    <div class="text-white d-flex h-100 mask blue-gradient-rgba">
+                        <div class="first-content align-self-center p-3">
+                            <h4 ng-show="createFrmerRequestForm " style="padding: 10px; color: white;"><strong>Create a farmer request</strong></h4>
+                            <h4 ng-show="editFarmerRequestForm" style="padding: 10px; color: white;"><strong>Edit farmer request</strong></h4>
+                        </div>
+                    </div>
+                </div>
+                <div style="height:auto; padding: 10px;" ng-show="createBuyerRequest">
+                    <form ng-submit="createFarmerRequest()">
+                        <div class="">
+                            <h3><strong style="color:#007991">Agri</strong>fair</h3>
+                            <div class="form-group textAlignLeft marginTopLarge">
+                                <label for="itemName" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                    <input ng-model="farmerRequestInfo.item_name" id="itemName" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 100%">
+                                    <span class="a-field__label-wrap">
+                                        <span class="a-field__label">Item Name</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="alert-danger" ng-show="errorMsgUser">
+                                <p>{{errorMsgUsername}}</p>
+                            </div>
+                            <div class="form-group textAlignLeft marginTopLarge">
+                                <label for="amount" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                    <input ng-model="farmerRequestInfo.amount" id="amount" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 100%">
+                                    <span class="a-field__label-wrap">
+                                        <span class="a-field__label">Amount</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="alert-danger" ng-show="errorMsgUser">
+                                <p>{{errorMsgUsername}}</p>
+                            </div>
+                            <div class="form-group textAlignLeft marginTopLarge">
+                                <label for="district" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                    <input ng-model="farmerRequestInfo.district" id="district" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 100%">
+                                    <span class="a-field__label-wrap">
+                                        <span class="a-field__label">District</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="alert-danger" ng-show="errorMsgUser">
+                                <p>{{errorMsgUsername}}</p>
+                            </div>
+                            <div class="form-group textAlignLeft marginTopLarge">
+                                <label for="phoneNumber" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                    <input ng-model="farmerRequestInfo.phone_number" id="phoneNumber" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 100%">
+                                    <span class="a-field__label-wrap">
+                                        <span class="a-field__label">Phone Number</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="alert-danger" ng-show="errorMsgUser">
+                                <p>{{errorMsgUsername}}</p>
+                            </div>
+                            <div class="form-group textAlignLeft marginTopLarge">
+                                <label for="discription" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                    <input ng-model="farmerRequestInfo.item_description" id="discription" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 100%">
+                                    <span class="a-field__label-wrap">
+                                        <span class="a-field__label">Discription</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="alert-danger" ng-show="errorMsgPass">
+                                <p>{{errorMsgPassword}}</p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="marginTopSmall row">
+                                <button ng-show="createFrmerRequestForm " type="submit" class="basicButton ">Create</button>
+                                <button ng-show="editFarmerRequestForm" type="submit" class="basicButton ">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card gradient-card shade" style="background-color: white; border-radius: 10px;height: auto;">
+                <div ng-click="showMyBuyerRequests()" class="card-image" style="background-color: blue;border-radius: 10px;">
+                    <div class="text-white d-flex h-100 mask blue-gradient-rgba">
+                        <div class="first-content align-self-center p-3">
+                            <h4 style="padding: 10px; color: white;"><strong>Buyer requests</strong></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div class="card mb-3" style="width: 100%;margin-bottom: 10px;"  ng-repeat="myFarmerRequests in myFarmerRequests" >
+                <div class="row no-gutters shade" style="background-color: white; border-radius: 10px;">
+                    <div class="card-header" style="padding: 10px;background-color: gray;border-top-right-radius: 10px;border-top-left-radius: 10px;color: white">
+                        <h4 class="card-title"><strong>{{myFarmerRequests.item_name}}</strong></h4>
+                    </div>
+                    <div class="card-body" style="padding: 10px">
+                        <div class="column" style="width: 25%">
+                            <h2><strong>{{myFarmerRequests.amount}}</strong></h2>
+                        </div>
+                        <div class="column" style="width: 25%">
+                            <p><strong>{{myFarmerRequests.district}}</strong></p>
+                            <p class="card-text" style="color: darkgray"><strong>{{myFarmerRequests.phone_number}}</strong></p>
+                        </div>
+                        <div class="column" style="width: 50%;border-left: 1px solid;padding-left: 5px;">
+                            <p class="card-text" style="color: darkgray"><strong>discription</strong></p>
+                            <h3 style="color: darkgray">{{myFarmerRequests.item_description}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button ng-click="editMyFarmerRequest(myFarmerRequests.farmer_request_id)" type="" style="margin: 0px;margin-top:5px;" class="editButton ">Edit</button>
+                            <button ng-click="deleteMyFarmerRequest(myFarmerRequests.farmer_request_id)"type="" style="margin: 0px;margin-top:5px" class="deleteButton">delete</button> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

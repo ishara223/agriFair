@@ -1,0 +1,31 @@
+/*ipad land*/
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+    .col-md-2{
+        width: 21.666667%;
+    }
+}
+/*ipad potr*/
+@media only screen and (min-width: 768px) and (max-width: 959px){
+    .col-md-2{
+        width: 21.666667%;
+    }
+}
+/*iphone land*/
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+}
+/*iphone potr*/
+@media only screen and (min-width: 320px) and (max-width: 479px){
+
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    #body {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}

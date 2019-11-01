@@ -1,0 +1,147 @@
+/*left menu*/
+.side-nav-main {
+    top: 30px;
+    margin-left: 20px !important;
+}
+.side-nav {
+    width: 100%;
+    z-index: 1;
+    background: #F8F6F8;
+    overflow-x: hidden;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    /*border-radius: 5px;*/
+    cursor: pointer;
+}
+.side-nav a {
+    padding: 6px 6px 8px 16px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+    font-size: 14px;
+    color: #0037AC;
+    display: block;
+}
+.side-nav a:hover {
+    color: #ffffff;
+    background-color: #5f5f5f;
+}
+
+/* slider styles **/
+
+/* .slidecontainer {
+    width: 100%;
+} */
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 9px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+/** Feedback Form Styles **/
+
+.question-label{
+    opacity: 0.7; 
+    font-size: 9pt;
+    margin-bottom: 3%;
+}
+
+.range-label{
+    font-size: 9px; 
+    opacity:0.6;  
+    margin-top:15px;
+}
+
+.left-range-label{
+    text-align: left; 
+    margin-left:28px;
+}
+
+.right-range-label{
+    text-align: right; 
+    margin-left: 145px;
+}
+
+.slider-color{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px; 
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+}
+
+.submit-button{
+    margin-top: 20px;
+    margin-left: 155px;
+}
+.feedback-form-header{
+    /* opacity:0.7; */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.feedback-form-subheader{
+    margin-bottom:20px;
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+.feedback-form-container{
+    background-color: #ffffff;
+    position: absolute;
+    padding: 10px;
+    height: 460px;
+    width: 94%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eee;
+    /*overflow:auto;*/
+    min-height:1002px;
+    /*overflow-x:hidden;*/
+}
+
+.feedback-slider{
+    margin-left: 23px;
+}
+
+.questionContainer{
+    margin-bottom: 30px;
+}
+#slider_5{
+    height: 20vh;
+}

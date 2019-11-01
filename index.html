@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://img.icons8.com/color/48/000000/sprout.png">
+    <title>Agrifair</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="app/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/bootstrap/bootstrap-slider.min.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="app/css/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.css">
+    <!--google material design icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Toaster-->
+    <link rel="stylesheet" href="app/css/angular-toaster/toaster.min.css">
+
+    <!--Custom CSS-->
+   
+    <link rel="stylesheet" href="app/css/custom/myfarmerRequests.css">
+    <link rel="stylesheet" href="app/css/custom/loginStyle.css">
+    <link rel="stylesheet" href="app/css/custom/commonLayout.css">
+    <link rel="stylesheet" href="app/css/custom/dashBoard.css">
+    <link rel="stylesheet" href="app/css/custom/dashBoardMenu.css">
+    <link rel="stylesheet" href="app/css/custom/registrationForm.css">
+    <link rel="stylesheet" href="app/css/custom/changePassword.css">
+    <link rel="stylesheet" href = "app/css/custom/tooltipster.css">
+    <link rel="stylesheet" href = "app/css/custom/buyerRequests.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.2/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://cdn.rawgit.com/konvajs/konva/2.1.7/konva.min.js"></script>
+    <!--feedback form episode 4-->
+    <!--ratings-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js" charset="utf-8"></script>
+    <script src="rater.js" charset="utf-8"></script>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>-->
+    <!--<script>-->
+        <!--$(function () {-->
+            <!--$("#rateYo").rateYo({-->
+                <!--numStars: 10-->
+            <!--});-->
+        <!--});-->
+        <!--// Getter-->
+        <!--var numStars = $("#rateYo").rateYo("option", "numStars"); //returns 10-->
+        <!--// Setter-->
+        <!--$("#rateYo").rateYo("option", "numStars", 10);-->
+    <!--</script>-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="fontawesome-stars.css"> -->
+    <!--<script src="http://code.jquery.com/jquery-1.11.3.min.js" charset="utf-8"></script>-->
+    <!-- <script src="rater.js" charset="utf-8"></script> -->
+</head>
+<body style="background-color: #ffffff" ng-app="eLankapuraApp">
+    <div class="">
+        <ui-view></ui-view>
+    </div>
+    <!--Angular Js-->
+    <script type="text/javascript" src="app/js/angular/lib/angular.min.js"></script>
+    <script type="text/javascript" src="app/js/angular/lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="app/js/angular/lib/ng-media-events.js"></script>
+    <script src="app/js/angular/lib/angular-messages.min.js"></script>
+    <script src="app/js/angular/lib/toaster.min.js"></script>
+    <!-- <script src="app/js/angular/lib/movingPlugs.js"></script> -->
+
+    <!--Bootstrap Jquery-->
+    <script type="text/javascript" src="app/js/bootstrap/jquery.min.js"></script>
+    <!--Bootstrap Js-->
+    <script type="text/javascript" src="app/js/bootstrap/bootstrap.min.js"></script>
+    <!--app.js-->
+    <script src="app.js"></script>
+    <!--routes.js-->
+    <script src="routes.js"></script>
+    <!--angular-dragdrop.min.js-->
+    <script src="app/js/angular/lib/angular-dragdrop.min.js"></script>
+    <!--jquery-ui.min.js-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <!--tootip-->
+    <script type="text/javascript" src="app/js/angular/lib/jquery.tooltipster.js"></script>
+    
+    <!--Angular Controllers-->
+    <script type="text/javascript" src="app/js/angular/controllers/loginCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/dashBoardCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/buyerLayoutCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/farmerLayoutCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/adminLayoutCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/myFarmerRequestsCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/farmerHomeCtrl.js"></script>
+    
+    
+    <script type="text/javascript" src="app/js/angular/controllers/dashBoardMenuCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/registrationFormCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/changePasswordCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/logoutCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/feedbackFormCtrl.js"></script>
+    <script type="text/javascript" src="app/js/angular/controllers/buyerRequests.js"></script>
+   
+    <script type="text/javascript" src="app/js/angular/customServices.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcz6X_p9233_g_vBN-FDMbJsyPJPY27IM&amp;libraries=places"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<div ng-controller="feedbackFormCtrl" class="feedback-form-container">
+    <h3 class="feedback-form-header"><strong>අදහස් හා යෝජනා</strong></h3>
+    <h4 class="feedback-form-subheader">පහත නිර්ණායක වලට අනුව වෙබ් අඩවිය  ශ්‍රේණිගත කරන්න </h4>
+<div class="col-md-6">
+    <div class="questionContainer">
+        <label class="question-label">මෙම වෙබ් අඩවියේ අන්තර්ගතය </label>
+        <div class="row">
+            <div class="slidecontainer col-md-5 feedback-slider">
+                <input type="text" class="slider-color slider"  value="50" name="question1" data-qid="1"  id="slider_0">
+            </div>
+        </div>
+        <div class="row">
+            <label class="left-range-label range-label">දුර්වලයි</label>
+            <!-- <label style="text-align: center">සාමාන්‍යයි</label> -->
+            <label class="right-range-label range-label">ඉතා හොඳයි</label>
+        </div>
+    </div>
+    <div class="questionContainer">
+        <label class="question-label">මෙම වෙබ් අඩවියේ කරුණු ඉදිරිපත් කිරීම  </label>
+        <div class="row">
+            <div class="slidecontainer col-md-5 feedback-slider">
+                <input type="text" class="slider-color slider"  name="question2" data-qid="2" class="slider" id="slider_1" required>
+            </div>
+        </div>
+        <div class="row">
+            <label class="left-range-label range-label">දුර්වලයි</label>
+            <!-- <label style="text-align: center">සාමාන්‍යයි</label> -->
+            <label class="right-range-label range-label">ඉතා හොඳයි</label>
+        </div>
+    </div>
+    <div class="questionContainer">
+        <label class="question-label">මෙම වෙබ් අඩවියේ පරිශීලනයේ පහසු භාවය </label>
+        <div class="row">
+            <div class="slidecontainer col-md-5 feedback-slider">
+                <input type="text" name="question3" class="slider-color slider" data-qid="3"   class="slider" id="slider_2" required>
+            </div>
+        </div>
+        <div class="row">
+            <label class="left-range-label range-label">දුර්වලයි</label>
+            <!-- <label style="text-align: center">සාමාන්‍යයි</label> -->
+            <label class="right-range-label range-label">ඉතා හොඳයි</label>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="questionContainer">
+        <label class="question-label">කෙතරම් දුරට මෙම වෙබ් අඩවිය තවත් කෙනෙකුට නිර්දේශ කරන්නේද </label>
+        <div class="row">
+            <div class="slidecontainer col-md-5 feedback-slider">
+                <input type="text"  name="question4" class="slider-color slider" data-qid="4"  class="slider" id="slider_3" required>
+            </div>
+        </div>
+        <div class="row">
+            <label class="left-range-label range-label">නිර්දේශ නොකරයි</label>
+            <!-- <label style="text-align: center">සාමාන්‍යයි</label> -->
+            <label class="right-range-label range-label">ඉහළින් නිර්දේශ කරයි</label>
+        </div>
+    </div>
+    <div class="questionContainer">
+        <label class="question-label">උපදෙස් වල පැහැදිලි භාවය </label>
+        <div class="row">
+            <div class="slidecontainer col-md-5 feedback-slider">
+                <input type="text"  name="question5" class="slider-color slider" data-qid="5"   class="slider" id="slider_4" required>
+            </div>
+        </div>
+        <div class="row">
+            <label class="left-range-label range-label">දුර්වලයි</label>
+            <!-- <label style="text-align: center">සාමාන්‍යයි</label> -->
+            <label class="right-range-label range-label">ඉතා හොඳයි</label>
+        </div>
+    </div>
+    <div class="questionContainer">
+        <div class="row">
+            <div class="col-md-8">
+                <label class="question-label"> වෙනත් අදහස් හා යෝජනා </label>
+                <input type="text" class="form-control"  name="question6" data-qid="6" ng-model="ideas" id="slider_5">
+            </div>
+        </div>
+    </div>
+<div class="questionContainer submit-button">
+    <button class="btn btn-primary" ng-click="sendFeedBack()">ඇතුලත් කරන්න</button>
+</div>
+</div>
+</div>
+<script>
+     var sliders = [];
+    sliders[0] = new Slider("#slider_0", {
+        ticks: [0, 1, 2, 3, 4,5],
+        ticks_labels: ['0', '1', '2', '3', '4','5'],
+        ticks_snap_bounds: 30
+    });
+    sliders[1] = new Slider("#slider_1", {
+        ticks: [0, 1, 2, 3, 4,5],
+        ticks_labels: ['0', '1', '2', '3', '4','5'],
+        ticks_snap_bounds: 30
+    });
+    sliders[2] = new Slider("#slider_2", {
+        ticks: [0, 1, 2, 3, 4,5],
+        ticks_labels: ['0', '1', '2', '3', '4','5'],
+        ticks_snap_bounds: 30
+    });
+    sliders[3] = new Slider("#slider_3", {
+        ticks: [0, 1, 2, 3, 4,5],
+        ticks_labels: ['0', '1', '2', '3', '4','5'],
+        ticks_snap_bounds: 30
+    });
+    sliders[4] = new Slider("#slider_4", {
+        ticks: [0, 1, 2, 3, 4,5],
+        ticks_labels: ['0', '1', '2', '3', '4','5'],
+        ticks_snap_bounds: 30
+    });
+</script>

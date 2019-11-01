@@ -1,0 +1,127 @@
+<!--Registration Form View-->
+<style>
+.ng-valid {
+    border-color: green;
+    outline-color: green;
+}
+
+.messages {
+    font-size: smaller;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color: red;
+}</style>
+
+<div class="registrationOuter" style="height: 100vh; background-size: cover;" ng-controller="registrationFormCtrl">
+    <div class="col-md-4 col-sm-12">
+    </div>
+    <form name="registerForm" ng-submit="registerUser(registerForm.$valid)" novalidate class="loginStyle">
+        <div class="registration-inner col-md-4 col-sm-12">
+            <h3><strong style="color:#007991">Agri</strong>fair</h3>
+            <div class="form-group textAlignLeft marginTopLarge">
+                <label for="firstName" class="field a-field a-field_a1 page__field">
+                    <input ng-model="registerInfo.firstName" id="firstNAme" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">First name</span>
+                    </span>
+                </label>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.fistName.$dirty && registerForm.fistName.$invalid">
+                        <span ng-if="registerForm.fistName.$error.required && !registerForm.fistName.$pristine">First name is required</span>
+                </div>
+            </div>
+            <!--<div class="form-group textAlignLeft marginTopLarge">
+                <label for="fistName">First Name</label>
+                <input name="fistName" type="text" class="form-control" id="fistName" ng-model="registerInfo.firstName" required>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.fistName.$dirty && registerForm.fistName.$invalid">
+                    <span ng-if="registerForm.fistName.$error.required && !registerForm.fistName.$pristine">මුල් නම අත්‍යවශ්‍යයි</span>
+                </div>
+            </div>-->
+            <div class="form-group textAlignLeft marginTopLarge">
+                <label for="lastName" class="field a-field a-field_a1 page__field">
+                    <input ng-model="registerInfo.lastName" id="lastName" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Last Name</span>
+                    </span>
+                </label>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.fistName.$dirty && registerForm.fistName.$invalid">
+                        <span ng-if="registerForm.lastName.$error.required && !registerForm.lastName.$pristine">Last name is required</span>
+                </div>
+            </div>
+            <!--<div class="form-group textAlignLeft">
+                <label for="lastName">last Name</label>
+                <input name="lastName" type="text" class="form-control" id="lastName" ng-model="registerInfo.lastName" required>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.lastName.$dirty && registerForm.lastName.$invalid">
+                    <span ng-if="registerForm.lastName.$error.required && !registerForm.lastName.$pristine">අවසන් නම අත්‍යවශ්‍යයි</span>
+                </div>
+            </div>-->
+            <div class="form-group textAlignLeft marginTopLarge">
+                <label for="phoneNumber" class="field a-field a-field_a1 page__field">
+                    <input ng-model="registerInfo.userName" id="phoneNumber" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Phone Number</span>
+                    </span>
+                </label>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.userName.$dirty && registerForm.userName.$invalid">
+                        <span ng-if="registerForm.userName.$error.required && !registerForm.userName.$pristine">Phone Number required</span>
+                </div>
+            </div>
+            <!--<div class="form-group textAlignLeft">
+                <label for="userName">Phone Number</label>
+                <input name="userName"  type="text" class="form-control" id="userName" ng-model="registerInfo.userName" required>
+                <div style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-if="registerForm.userName.$dirty && registerForm.userName.$invalid">
+                    <span ng-if="registerForm.userName.$error.required && !registerForm.userName.$pristine">පරිශීලක නාමය අත්‍යවශ්‍යයි</span>
+                </div>
+            </div>-->
+            <div class="form-group textAlignLeft marginTopLarge" ng-class="{ 'has-error' : registerForm.password.$dirty && registerForm.password.$invalid }">
+                <label for="password" class="field a-field a-field_a1 page__field">
+                    <input  ng-change="comparePasswords()" ng-model="registerInfo.password" ng-minlength="8" name="password" required="" id="password" type="password"class="field__input a-field__input" placeholder="........ " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Password</span>
+                    </span>
+                </label>
+                <div ng-if="registerForm.password.$dirty">
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.password.$error.required" class="help-block">password required</p>
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.password.$error.minlength" class="help-block">use at least 8 characters .</p>
+                </div>
+            </div>
+            <!--<div class="form-group textAlignLeft" ng-class="{ 'has-error' : registerForm.password.$dirty && registerForm.password.$invalid }">
+                <label>Pass Word</label>
+                <input ng-change="comparePasswords()" type="password" id="password" class="form-control"  ng-model="registerInfo.password" ng-minlength="8" name="password" required="">
+                <div ng-if="registerForm.password.$dirty">
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.password.$error.required" class="help-block">මුර පදය කිරිම අත්‍යවශ්‍යයි.</p>
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.password.$error.minlength" class="help-block">අඩුම තරමින් අක්ශර 8ක්වත් භාවිතා කරන්න.</p>
+                </div>
+            </div>-->
+            <div class="form-group textAlignLeft marginTopLarge" ng-class="{'has-error' : registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid}">
+                <label for="confirmPassword" class="field a-field a-field_a1 page__field">
+                    <input   ng-model="registerInfo.confirmPassword" ng-minlength="8" name="confirmPassword" required="" id="confirmPassword" type="password"class="field__input a-field__input" placeholder="........ " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label">Confirm Password</span>
+                    </span>
+                </label>
+                <div ng-if="registerForm.confirmPassword.$dirty">
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.confirmPassword.$error.required" class="help-block">Password confirmation required</p>
+                    <div ng-if="comparePasswordErrorMsg"><p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error help-block">{{comparePasswordErrorMsgShow}}</p></div>
+                </div>
+            </div>
+            <!--<div class="form-group textAlignLeft" ng-class="{'has-error' : registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid}">
+                <label>Confirm Password</label>
+                <input type="password" id="confirmPassword" class="form-control" ng-model="registerInfo.confirmPassword" name="confirmPassword" ng-minlength="8" required="">
+                <div ng-if="registerForm.confirmPassword.$dirty">
+                    <p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error" ng-show="registerForm.confirmPassword.$error.required" class="help-block">මුර පදය තහවුරු කිරිම අත්‍යවශ්‍යයි.</p>
+                    <div ng-if="comparePasswordErrorMsg"><p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert-danger login-error help-block">{{comparePasswordErrorMsgShow}}</p></div>
+                </div>
+            </div>-->
+            <div class="form-group textAlignLeft" ng-class="{'has-error' : registerForm.confirmPassword.$dirty && registerForm.confirmPassword.$invalid}">
+                <div ng-if="registerForm.confirmPassword.$dirty">
+                    <div ng-if="loginSuccessMsgShow"><p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert alert-success">{{loginSuccessMsg}}</p></div>
+                    <div ng-if="usernameExistsMsgShow"><p style="margin-top: 2px; padding: 4px; border-radius: 4px" class="alert alert-danger">{{usernameExistsMsg}}</p></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="marginTopSmall row">
+                <button ng-disabled="registerForm.$pristine || registerForm.$invalid" ng-click="validatePasswords()" type="submit" class="basicButton">Register</button>
+            </div>
+        </div>
+    </form>
+</div>

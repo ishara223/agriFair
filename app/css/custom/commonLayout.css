@@ -1,0 +1,194 @@
+/*Common Layout Style*/
+.cLHeaderMain{
+    height: 50px;
+    width: 100%;
+    background-color: #5f5f5f;
+}
+.cLHeaderMain a{
+    color: white;
+}
+.cLFooterMain{
+    height: 40px;
+    background-color: #5f5f5f;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+i{
+    color: #1b6d85;
+}
+
+.newFooterMain{
+    height: 40px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.textAlignLeft {
+    text-align: left;
+}
+.textColorWhite {
+    color: #ffffff;
+}
+.common-activity-introduction {
+    background-image: url('../../src/img/episodeOne/activities/ep_01_ac_01_intro.png');
+    margin-left: 125px;
+    width: 700px;
+    height: 450px;
+}
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    /*margin: 10% auto;*/
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #7ac142;
+    }
+}
+
+.story-video {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width:100%;
+}
+
+.video-background {
+    background-color: #29303b;
+}
+
+/*Left slider*/
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    /* height: 100%;
+    width: 295px;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px; */
+    padding: 1%;
+    height: 100%;
+    width: 16%;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background-color: #f5f5f5f5;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 15px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 100%;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/*.sidenav a:hover {*/
+    /*color: #f1f1f1;*/
+/*}*/
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.side-menu-play-icon{
+    font-size: 25px;
+    padding: 1%;
+}
+
+.feedbackform{
+    margin-top: 10%;
+    padding: 2%;
+    background-color: white;
+    box-shadow: 0 3px 12px 0 rgba(0,0,0,0.2),0 6px 5px 0 rgba(0,0,0,0.19) !important;
+}
+
+#main {
+    transition: margin-left .5s;
+    /*padding: 16px;*/
+}
+
+.main-container{
+    background-color: rgba(49, 112, 143, 0.98);
+    position: fixed;
+    height:100%;
+    width: 100%;
+}
+
+.darkNavbar{
+    background-color: #29303b;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+     
+    }
+  }
+

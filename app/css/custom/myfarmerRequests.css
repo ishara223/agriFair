@@ -1,0 +1,32 @@
+.deleteButton{
+    background: none;
+    border-radius: 100px;
+    padding: 8px 60px;
+    color: darkred;
+    text-decoration: none;
+    font-size: 1.45em;
+    margin: 0 15px;
+    border: 2px solid rgb(170, 106, 9);
+}
+.deleteButton:hover {
+    color: #ffffff;
+    background-color: rgb(170, 106, 9);
+}
+
+.editButton {
+    background: none;
+    border-radius: 100px;
+    padding: 8px 60px;
+    color: green;
+    text-decoration: none;
+    font-size: 1.45em;
+    margin: 0 15px;
+    border: 2px solid darkgreen;
+}
+.editButton:hover {
+    color: #ffffff;
+    background-color: green;
+}
+.shade{
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}

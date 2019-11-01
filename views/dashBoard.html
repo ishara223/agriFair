@@ -1,0 +1,193 @@
+<div ng-controller="dashBoardCtrl" >
+  <div class="container" ng-show ="productList">
+    <div ng-repeat="fermerItem in fermerItems" class="col-md-3">
+      <div class="page-wrapper" style="width: 100%;"> 
+        <div class="el-wrapper" style="width: 100%;">
+          <div class="box-up">
+            <img class="img" src="app/src/img/episodeFive/speker5.jpg" alt="" style="width: 100%">
+            <div class="img-info">
+              <div class="info-inner">
+                <span class="p-name">I feel like Pablo</span>
+                <span class="p-company">Yeezy</span>
+              </div>
+              <div class="a-size">Available sizes : <span class="size">S , M , L , XL</span></div>
+            </div>
+          </div> 
+          <div class="box-down">
+            <div class="h-bg">
+              <div class="h-bg-inner"></div>
+            </div>
+  
+            <a class="cart" href="#">
+              <span class="price">$120</span>
+              <span class="add-to-cart">
+                <span class="txt">Add in cart</span>
+              </span>
+            </a>
+          </div>
+        </div>        
+      </div>
+    </div>
+    <div >
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Done?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="todo in todos">
+                    <td> {{todo.id}}</td>
+                    <td> {{todo.title}}</td>
+                    <td> {{todo.description}}</td>
+                    <td> {{todo.done}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    </div>       
+  </div>
+  <div class="container" ng-show = "productCategory">
+      <h3 style="padding: 30px;">Select a product to buy</h3>
+    <div class="row" style="">
+      <div class="col-md-3 col-sm-12 productCatagory" ng-click = "getVegitableSubCategories()">
+        <div class="card" style="width: auto;border-radius: 10px; border: 2px solid darkgray">
+          <img class="card-img-top" style="width: 100%; border-radius: 9px;" src="app\src\img\vegitables.jpg" alt="vegitables">
+          <div class="card-body" ng-click = "getVegitableSubCategories()">
+            <h3 class="card-title" style="text-align: center">vegitables</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 productCatagory" ng-click = "getFruitsSubCategories()">
+        <div class="card" style="width: auto; border-radius: 10px; border: 2px solid darkgray">
+          <img class="card-img-top" style="width: 100%; border-radius: 9px;" src="app\src\img\fruits.jpg" alt="vegitables">
+          <div class="card-body" ng-click = "getFruitsSubCategories()">
+            <h3 class="card-title" style="text-align: center">fruits</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 productCatagory">
+        <div class="card" style="width: auto;border-radius: 10px; border: 2px solid darkgray">
+          <img class="card-img-top" style="width: 100%; border-radius: 9px;" src="app\src\img\grains.jpg" alt="vegitables">
+          <div class="card-body" ng-click = "getGrainsSubCategories()">
+            <h3 class="card-title" style="text-align: center">grains</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 productCatagory">
+        <div class="card" style="width: auto;border-radius: 10px; border: 2px solid darkgray">
+          <img class="card-img-top" style="width: 100%; border-radius: 9px;" src="app\src\img\others.jpg" alt="vegitables">
+          <div class="card-body" ng-click = "getOtherSubCategories()">
+            <h3 class="card-title" style="text-align: center">others</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" ng-show = "vegitables" >
+      <h3 style="padding: 30px;">Select a vegiyable to buy</h3>
+    <div  class="row" style="padding-bottom: 100px;">
+      <div ng-repeat="user in user" class="col-md-4 col-sm-12" style="margin-bottom: 10px;"ng-click = "showBuyerRequests(user.category_id,user.sub_category_id,user.sub_category_name)">
+        <div class="column" style="width: 30%; height:100px; background-color: lightgrey; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
+          <img style="height: 100%;width:100%; border-radius: 50%; " src="app\php\images\{{user.image_name}}">
+        </div>
+        <div class="column" style="width: 70%; height:100px; background-color: lightgrey; ">
+          <h2 style="text-align: center;">{{user.sub_category_name}}</h2>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="container" ng-show = "fruits">
+    <h3 style="padding: 30px;">Select a fruits to buy</h3>
+  <div  class="row" style="padding-bottom: 100px;">
+    <div ng-repeat="user in user" class="col-md-4 col-sm-12" style="margin-bottom: 10px;" ng-click = "showBuyerRequests(user.category_id,user.sub_category_id)">
+      <div class="column" style="width: 30%; height:100px; background-color: lightgrey; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
+        <img style="height: 100%;width:100%; border-radius: 50%; " src="app\src\img\tomatoes.jpg">
+      </div>
+      <div class="column" style="width: 70%; height:100px; background-color: lightgrey; ">
+        <h2 style="text-align: center;">{{user.sub_category_name}}</h2>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+  <div class="container" ng-show = "grains">
+    <h3 style="padding: 30px;">Select a grains to buy</h3>
+  <div  class="row" style="padding-bottom: 100px;" ng-click = "showBuyerRequests(user.category_id,user.sub_category_id)">
+    <div ng-repeat="user in user" class="col-md-4 col-sm-12" style="margin-bottom: 10px;">
+      <div class="column" style="width: 30%; height:100px; background-color: lightgrey; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
+        <img style="height: 100%;width:100%; border-radius: 50%; " src="app\src\img\tomatoes.jpg">
+      </div>
+      <div class="column" style="width: 70%; height:100px; background-color: lightgrey; ">
+        <h2 style="text-align: center;">{{user.sub_category_name}}</h2>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+  <div class="container" ng-show = "others">
+    <h3 style="padding: 30px;">Select a item to buy</h3>
+  <div  class="row" style="padding-bottom: 100px;" ng-click = "showBuyerRequests(user.category_id,user.sub_category_name)">
+    <div ng-repeat="user in user" class="col-md-4 col-sm-12" style="margin-bottom: 10px;">
+      <div class="column" style="width: 30%; height:100px; background-color: lightgrey; border-top-left-radius: 50%; border-bottom-left-radius: 50%;">
+        <img style="height: 100%;width:100%; border-radius: 50%; " src="app\php\images\{{user.image_name}}">
+      </div>
+      <div class="column" style="width: 70%; height:100px; background-color: lightgrey; ">
+        <h2 style="text-align: center;">{{user.sub_category_name}}</h2>
+      </div>
+    </div>
+    
+  </div>
+  </div>
+  <div class="container" ng-show = "buyerRequesrsShow">
+    <div class="col-md-8 col-sm-12 hide" style=" border: 1px solid;   margin: 5px;" ng-repeat="buyerrequests in buyerrequests">
+      <h3>sub_category_name: {{subCategoryName}}</h3>
+      <p>user_id: {{buyerrequests.user_id}}</p>
+      <p>amount: {{buyerrequests.amount}}</p>
+      <p>bulk_price: {{buyerrequests.bulk_price}}</p>
+      <p>buyer_request_id: {{buyerrequests.buyer_request_id}}</p>
+      <p>catagory_id: {{buyerrequests.catagory_id}}</p>
+      <p>discount: {{buyerrequests.discount}}</p>
+      <p>location: {{buyerrequests.location}}</p>
+      <p>sub_category_id: {{buyerrequests.sub_category_id}}</p>
+      <p>unit_price: {{buyerrequests.unit_price}}</p>
+      <p>item_type: {{buyerrequests.item_type}}</p>
+      <p>buyer_request_id: {{buyerrequests.buyer_request_id}}</p>
+      <img src="app\php\images\{{buyerrequests.image_name}}" style="width: 300px;">
+    </div>
+    <div class="container">
+      <div class="col-md-8 col-sm-12">
+        <div class="card mb-3" style="width: 100%;margin-bottom: 10px;" ng-repeat="buyerrequests in buyerrequests">
+          <div class="row no-gutters" style="background-color: wheat; border-radius: 10px;">
+            <div class="col-md-4" style="height: auto;line-height: 30vh;">
+              <img ng-src="app\php\images\{{buyerrequests.image_name}}" style="width: 100%; border-radius: 4px;" class="card-img" alt="image">
+            </div>
+            <div class="col-md-8">
+              <div class="card-header">
+                <h4 class="card-title"><strong>{{subCategoryName}}</strong></h4>
+              </div>
+              <div class="card-body">
+                <div class="column" style="width: 50%">
+                  <h2><strong>Rs.{{buyerrequests.unit_price}}/-</strong></h2>
+                </div>
+                <div class="column" style="width: 50%;border-left: 1px solid;padding-left: 5px;">
+                  <p class="card-text" style="color: darkgray">Bulk price <strong>Rs.{{buyerrequests.bulk_price}}/-</strong></p>
+                  <h3 style="color: darkgray">{{buyerrequests.amount}}kg</h3>
+                </div>
+                <a href="#" class="btn btn-primary">more</a>
+              </div>
+              <div class="card-footer text-muted">
+                <p class="card-text"><small class="text-muted">in {{buyerrequests.location}} </small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

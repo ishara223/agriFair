@@ -1,0 +1,169 @@
+<div ng-controller="farmerHomeCtrl" style="background-color: #fbfbfb;height:auto;min-height: 92vh;">
+    <div class="container">
+        <div class="col-md-12 shade" style="background-color: white; border-radius:10px;margin:10px;padding:10px">
+            <H3>categories</H3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4 col-sm-12" style="padding-right: 10px;">
+            <div class="card gradient-card shade" style="background-color: white; border-radius: 10px;height: auto;margin-bottom:10px">
+                <div ng-click="showCreateBuyerRequest()" class="card-image" style="background-color: blue;border-radius: 10px;">
+                    <div class="text-white d-flex h-100 mask blue-gradient-rgba">
+                        <div class="first-content align-self-center p-3">
+                            <h4  style="padding: 10px; color: white;"><strong>Create a buyer request</strong></h4>
+                            <h4 ng-show="editFarmerRequestForm" style="padding: 10px; color: white;"><strong>Edit buyer request</strong></h4>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div style="height:auto; padding: 10px;" >
+                    <form ng-submit="submit()" name="form" role="form">
+                        <label for="itemName" class="field a-field a-field_a1 page__field">
+                            <input ng-model="form.itemName" id="itemName" type="text"class="field__input a-field__input" placeholder="eg;- carrot " required style="width: 155%">
+                            <span class="a-field__label-wrap">
+                                <span class="a-field__label">Item name</span>
+                            </span>
+                        </label>
+                        <p>Select a category</p>
+                        <div class="form-check">
+                            <input ng-model="form.categoryId" value="1" type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
+                            <label class="form-check-label" for="materialGroupExample1">vegitable</label>
+                        </div>
+                        <div class="form-check">
+                            <input ng-model="form.categoryId" value="2" type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios" checked>
+                            <label class="form-check-label" for="materialGroupExample2">Fruits</label>
+                        </div>
+                        <div class="form-check">
+                            <input ng-model="form.categoryId" value="3" type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
+                            <label class="form-check-label" for="materialGroupExample3">grains</label>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="amount" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.amount" id="amount" type="text"class="field__input a-field__input" placeholder="eg;- 10 " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Amount</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="unitPrice" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.unitPrice" id="unitPrice" type="text"class="field__input a-field__input" placeholder="eg;- 100 " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Unit price</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="bulkPrice" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.bulkPrice" id="bulkPrice" type="text"class="field__input a-field__input" placeholder="eg;- 1000 " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Bulk price</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="phoneNumber" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.discount" id="phoneNumber" type="text"class="field__input a-field__input" placeholder="eg;- 50 " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Discount</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="district" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.district" id="district" type="text"class="field__input a-field__input" placeholder="eg;- galle " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">District</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="phoneNumber" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.phone_number" id="phoneNumber" type="text"class="field__input a-field__input" placeholder="eg;- 0712345678 " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Phone Number</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft ">
+                            <label for="discription" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.discription" id="discription" type="text"class="field__input a-field__input" placeholder="eg;- good Quality " required style="width: 100%">
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Discription</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="alert-danger" ng-show="errorMsgUser">
+                            <p>{{errorMsgUsername}}</p>
+                        </div>
+                        <div class="form-group textAlignLeft " style="cursor: pointer;background-color: lightgray">
+                            <label for="image" class="field a-field a-field_a1 page__field"style="width: 100%">
+                                <input ng-model="form.image" id="image" type="file" class="form-control input-lg" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" style="width:100%;opacity: 0;" >
+                                <span class="a-field__label-wrap">
+                                    <span class="a-field__label">Upload a picture</span>
+                                </span>
+                            </label>
+                        </div>
+                        <img  ng-show="imageShow" ng-src="{{image_source}}" style="width: 100%" class="card-img" alt="image">
+                        <input style="margin:5px" class="basicButton" type="submit" id="submit" value="Submit" />
+                        <br/>
+                    </form>
+                </div>
+            </div>
+            <div class="card gradient-card shade" style="background-color: white; border-radius: 10px;height: auto;">
+                <div ng-click="showMyBuyerRequests()" class="card-image" style="background-color: blue;border-radius: 10px;">
+                    <div class="text-white d-flex h-100 mask blue-gradient-rgba">
+                        <div class="first-content align-self-center p-3">
+                            <h4 style="padding: 10px; color: white;"><strong>Buyer requests</strong></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div class="card mb-3" style="width: 100%;margin-bottom: 10px;"  ng-repeat="myFarmerRequests in myFarmerRequests" >
+                <div class="row no-gutters shade" style="background-color: white; border-radius: 10px;">
+                    <div class="card-header" style="padding: 10px;background-color: gray;border-top-right-radius: 10px;border-top-left-radius: 10px;color: white">
+                        <h4 class="card-title"><strong>{{myFarmerRequests.item_name}}</strong></h4>
+                        <p style="color: white">{{myFarmerRequests.date| date : 'mediumTime'}}</p>
+                    </div>
+                    <div class="card-body" style="padding: 10px">
+                        <div class="column" style="width: 25%">
+                            <h2><strong>{{myFarmerRequests.amount}}</strong></h2>
+                        </div>
+                        <div class="column" style="width: 25%">
+                            <p><strong>{{myFarmerRequests.district}}</strong></p>
+                            <p class="card-text" style="color: darkgray"><strong>{{myFarmerRequests.phone_number}}</strong></p>
+                        </div>
+                        <div class="column" style="width: 50%;border-left: 1px solid;padding-left: 5px;">
+                            <p class="card-text" style="color: darkgray"><strong>discription</strong></p>
+                            <h3 style="color: darkgray">{{myFarmerRequests.item_description}}</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button ng-click="editMyFarmerRequest(myFarmerRequests.farmer_request_id)" type="" style="margin: 0px;margin-top:5px;" class="basicButton ">more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+</div>

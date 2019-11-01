@@ -1,0 +1,42 @@
+<p>admin layout</p>
+<div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters" style="border: 1px solid;">
+        <div class="col-md-4" style="height: 55vh; background-color:gray;">
+          <img ng-src="{{image_source}}" style="width: 100%" class="card-img" alt="image">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h4 class="card-title"><strong>Add sub catageries</strong></h4>
+            <div class="card-text">
+              <form ng-submit="submit()" name="form" role="form">
+                <label for="subCategoryName" class="field a-field a-field_a1 page__field">
+                    <input ng-model="form.subCategoryName" id="subCategoryName" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 155%">
+                    <span class="a-field__label-wrap">
+                      <span class="a-field__label">Sub catagory name</span>
+                    </span>
+                </label>
+                <p>Select a category</p>
+                <div class="form-check">
+                  <input ng-model="form.categoryId" value="1" type="radio" class="form-check-input" id="materialGroupExample1" name="groupOfMaterialRadios">
+                  <label class="form-check-label" for="materialGroupExample1">vegitable</label>
+                </div>
+                <div class="form-check">
+                  <input ng-model="form.categoryId" value="2" type="radio" class="form-check-input" id="materialGroupExample2" name="groupOfMaterialRadios" checked>
+                  <label class="form-check-label" for="materialGroupExample2">Fruits</label>
+                </div>
+                <div class="form-check">
+                  <input ng-model="form.categoryId" value="3" type="radio" class="form-check-input" id="materialGroupExample3" name="groupOfMaterialRadios">
+                  <label class="form-check-label" for="materialGroupExample3">grains</label>
+                </div>
+                <input ng-model="form.image" type="file" class="form-control input-lg" accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" style="width:100%" >
+                <input style="margin:5px" class="btn btn-primary" type="submit" id="submit" value="Submit" />
+                <br/>
+              </form>
+            </div>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

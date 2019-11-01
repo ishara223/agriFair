@@ -1,0 +1,26 @@
+<div ng-controller="farmerLayoutCtrl">
+    <header ng-show="headerVisible">
+        <div class="cLHeaderMain">
+            <div class="col-md-8">
+                <a class="navbar-brand" href="#"><p><strong style="color:#007991">Agri</strong>fair</p></a>
+                <!--<a class="navbar-brand" href="#">ගිණුම</a>-->
+            </div>
+            <div class="col-md-2">
+                <a style="cursor: pointer; float: right;" class="navbar-brand" ng-controller="logoutCtrl" ng-click="logoutUser()">log out</a>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary navbar-brand" style="color:white; background-color: transparent; border: none;">{{buyerName}}</button>
+            </div>
+        </div>
+    </header>
+    <body class="">
+        <ui-view></ui-view>
+    </body>
+    
+    <footer ng-show="headerVisible" id="footer">
+        <div  class="cLFooterMain">
+            <h5 ><a id="footerText" class="textColorWhite" href="" target="_blank">online harvast market</a></h5>
+        </div>
+    </footer>
+</div>
+    

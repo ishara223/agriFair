@@ -1,0 +1,35 @@
+<div class="loginOuter" ng-controller="loginCtrl">
+    <form ng-submit="loginUser()">
+        <div class="login-inner">
+            <h3><strong style="color:#007991">Agri</strong>fair</h3>
+            <div class="form-group textAlignLeft marginTopLarge">
+                <label for="usr" class="field a-field a-field_a1 page__field">
+                    <input ng-model="loginInfo.username" id="usr" type="text"class="field__input a-field__input" placeholder="eg;- jhon " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                      <span class="a-field__label">User name</span>
+                    </span>
+                </label>
+            </div>
+            <div class="alert-danger" ng-show="errorMsgUser">
+                <p>{{errorMsgUsername}}</p>
+            </div>
+            <div class="textAlignLeft form-group">
+                <label for="pwd" class="field a-field a-field_a1 page__field">
+                    <input ng-model="loginInfo.password" id="pwd" type="password"class="field__input a-field__input" placeholder=" " required style="width: 180%">
+                    <span class="a-field__label-wrap">
+                      <span class="a-field__label">password</span>
+                    </span>
+                </label>
+            </div>
+            <div class="alert-danger" ng-show="errorMsgPass">
+                <p>{{errorMsgPassword}}</p>
+            </div>
+            <a class="pull-left" ui-sref="changePassword">Change password</a>
+            <div class="clearfix"></div>
+            <div class="marginTopSmall row">
+                <div class="col-md-4"><a ui-sref="registration">Register</a></div>
+                <button type="submit" class="basicButton ">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
